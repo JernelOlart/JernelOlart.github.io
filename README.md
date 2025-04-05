@@ -16,10 +16,8 @@ En esta ocasión, incluiremos en la tarjeta botones con enlaces a un sitio web c
 
 La estructura del proyecto se organiza de la siguiente manera:
 
-- `index.html`: El archivo principal del sitio web que contiene el contenido HTML.
-- `styles.css`: El archivo principal de estilos CSS que define el aspecto del sitio web.
-- `images`: Carpeta que contiene las imágenes utilizadas en el sitio web.
-- `screenshots`: Carpeta donde encontrarás capturas de pantalla del proyecto en vivo.
+- `index.html`: El archivo principal del sitio web que contiene el contenido HTML Y CSS.
+
 
 **Requisitos para ejecutar el proyecto**
 
@@ -50,11 +48,3 @@ Se agradece cualquier contribución a este proyecto, ya sea en forma de correcci
 
 Este proyecto está licenciado bajo la licencia MIT.
 
-**Recursos adicionales**
-
-- [Introducción a HTML5](https://developer.mozilla.org/es/docs/Web/HTML)
-- [Introducción a CSS](https://developer.mozilla.org/es/docs/Web/CSS)
-- [Diseño web responsivo](https://blog.hubspot.es/website/diseno-responsive)
-- [Media queries](https://developer.mozilla.org/es/docs/Web/CSS/Media_queries)
-- [Unidades relativas](https://lenguajecss.com/css/unidades-css/relativas/)
-- [Diseño flexible](https://developer.mozilla.org/es/docs/Web/CSS/CSS_flexible_box_layout)
