@@ -1,7 +1,9 @@
-Página de Contactos Moderna - Nucleo Sepec
+# Página de Contactos Moderna - Nucleo Sepec
+
+
 ✨ Página de contactos interactiva y responsive para Nucleo Sepec con diseño elegante, animaciones fluidas y efectos visuales modernos.
 
-Características principales
+## Características principales
 🎨 Diseño atractivo con efecto glassmorphism y gradientes dinámicos
 
 📱 Totalmente responsive - se adapta a todos los dispositivos
@@ -14,7 +16,7 @@ Transiciones suaves
 
 Animaciones de aparición escalonada
 
-📞 Integración con canales de contacto:
+## 📞 Integración con canales de contacto:
 
 Enlaces directos a WhatsApp
 
@@ -26,7 +28,7 @@ Formularios de correo electrónico
 
 🏆 Logo del 20 aniversario de Nucleo Sepec
 
-Tecnologías utilizadas
+## Tecnologías utilizadas
 HTML5 semántico
 
 CSS3 avanzado (Flexbox, Grid, Animaciones)
@@ -38,5 +40,5 @@ Google Fonts (Poppins)
 Efectos con JavaScript ligero
 **Licencia**
 
-Este proyecto está licenciado bajo la licencia MIT.
+## Este proyecto está licenciado bajo la licencia MIT.
 
