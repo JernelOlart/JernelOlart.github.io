@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Nucleo Sepec</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #0056b3;
@@ -18,13 +19,27 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         
         body {
-            background-color: #f5f5f5;
+            background: url('https://i.ibb.co/bRs0Mnht/FFSD.png') no-repeat center center fixed;
+            background-size: cover;
             color: #333;
             line-height: 1.6;
+            position: relative;
+            min-height: 100vh;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: -1;
         }
         
         .container {
@@ -36,209 +51,471 @@
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 30px 0;
+            padding: 40px 0;
             text-align: center;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: pulse 15s infinite linear;
+            z-index: 0;
+        }
+        
+        @keyframes pulse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
         }
         
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 1s ease;
         }
         
         header p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.3s both;
         }
         
         .logo {
-            max-width: 150px;
+            max-width: 220px;
             margin-bottom: 20px;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+            animation: bounceIn 1s ease;
         }
         
         .contact-section {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-            margin-bottom: 50px;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 70px;
+            perspective: 1000px;
         }
         
         .contact-card {
             flex: 1;
-            min-width: 300px;
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-width: 320px;
+            max-width: 420px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transform-style: preserve-3d;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .contact-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        
+        .contact-card:nth-child(2) {
+            animation-delay: 0.4s;
         }
         
         .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
         }
         
         .contact-card h2 {
             color: var(--primary);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--accent);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent);
+            font-size: 1.8rem;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .contact-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
         }
         
         .contact-info {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .contact-item:hover {
+            transform: translateX(5px);
         }
         
         .contact-icon {
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            font-size: 18px;
+            margin-right: 20px;
+            font-size: 20px;
+            box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+            flex-shrink: 0;
+        }
+        
+        .contact-text {
+            flex-grow: 1;
+        }
+        
+        .contact-text p {
+            font-weight: 500;
+            color: var(--dark);
+            margin-bottom: 5px;
         }
         
         .contact-text a {
             color: var(--secondary);
             text-decoration: none;
             transition: color 0.3s;
+            font-weight: 400;
         }
         
-        .contact-text a:hover {
-            color: var(--accent);
-            text-decoration: underline;
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .whatsapp-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .whatsapp-btn:hover::before {
+            left: 100%;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .email-btn {
+            background: linear-gradient(135deg, var(--accent), #e65c00);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .email-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .email-btn:hover::before {
+            left: 100%;
+        }
+        
+        .email-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
+        }
+        
+        .email-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
         }
         
         .social-section {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeIn 1s ease 0.6s both;
         }
         
         .social-section h2 {
             color: var(--primary);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .social-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
         }
         
         .social-links {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 25px;
         }
         
         .social-link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
             color: white;
-            font-size: 24px;
+            font-size: 28px;
             text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+        
+        .social-link:hover::before {
+            left: 100%;
         }
         
         .social-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px) rotate(5deg) scale(1.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
         
-        .facebook { background-color: #3b5998; }
+        .facebook { background: linear-gradient(135deg, #3b5998, #2d4373); }
         .instagram { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); }
-        .linkedin { background-color: #0077b5; }
-        .twitter { background-color: #1da1f2; }
-        .web { background-color: var(--primary); }
+        .linkedin { background: linear-gradient(135deg, #0077b5, #005f8c); }
+        .twitter { background: linear-gradient(135deg, #1da1f2, #0d8ecf); }
+        .web { background: linear-gradient(135deg, var(--primary), var(--secondary)); }
         
         footer {
             text-align: center;
-            padding: 20px;
-            background: var(--secondary);
+            padding: 30px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
             color: white;
-            border-radius: 20px 20px 0 0;
+            border-radius: 30px 30px 0 0;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        footer p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes bounceIn {
+            from, 20%, 40%, 60%, 80%, to {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+            0% {
+                opacity: 0;
+                transform: scale3d(.3, .3, .3);
+            }
+            20% {
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+            40% {
+                transform: scale3d(.9, .9, .9);
+            }
+            60% {
+                opacity: 1;
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            80% {
+                transform: scale3d(.97, .97, .97);
+            }
+            to {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+        
+        /* Floating animation */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Glow animation */
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(0, 86, 179, 0.8);
+            }
         }
         
         @media (max-width: 768px) {
-            .contact-card {
-                min-width: 100%;
+            header h1 {
+                font-size: 2.2rem;
             }
             
-            header h1 {
-                font-size: 2rem;
+            header p {
+                font-size: 1rem;
             }
-        }
-        
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
-        
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-        }
-        
-        .whatsapp-btn i {
-            margin-right: 8px;
-        }
-        
-        .email-btn {
-            background-color: var(--accent);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
-        
-        .email-btn:hover {
-            background-color: #e65c00;
-        }
-        
-        .email-btn i {
-            margin-right: 8px;
+            
+            .contact-card {
+                min-width: 100%;
+                padding: 25px;
+            }
+            
+            .social-link {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <img src="https://www.nucleosepec.com.mx/wp-content/uploads/2023/01/logo-nucleo-sepec.png" alt="Nucleo Sepec Logo" class="logo">
+            <img src="https://i.ibb.co/gLw9z56p/20aniv.png" alt="Nucleo Sepec Logo" class="logo floating">
             <h1>Contáctanos</h1>
-            <p>Estamos aquí para ayudarte. Ponte en contacto con nuestro equipo.</p>
+            <p>Estamos aquí para ayudarte. Ponte en contacto con nuestro equipo de expertos.</p>
         </div>
     </header>
     
     <div class="container">
         <div class="contact-section">
-            <div class="contact-card">
-                <h2>TI Poza Rica</h2>
+            <div class="contact-card glow">
+                <h2><i class="fas fa-map-marker-alt"></i> TI Poza Rica</h2>
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -246,7 +523,7 @@
                         </div>
                         <div class="contact-text">
                             <p>WhatsApp</p>
-                            <a href="https://wa.me/5217821035865" class="whatsapp-btn">
+                            <a href="https://wa.me/5217461281424" class="whatsapp-btn">
                                 <i class="fab fa-whatsapp"></i> Enviar mensaje
                             </a>
                         </div>
@@ -265,8 +542,8 @@
                 </div>
             </div>
             
-            <div class="contact-card">
-                <h2>TI Villahermosa</h2>
+            <div class="contact-card glow">
+                <h2><i class="fas fa-map-marker-alt"></i> TI Villahermosa</h2>
                 <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -323,5 +600,44 @@
     </footer>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        // Efecto de aparición al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.contact-card, .social-section').forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Efecto de onda en los botones
+            const buttons = document.querySelectorAll('.whatsapp-btn, .email-btn, .social-link');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const x = e.clientX - e.target.getBoundingClientRect().left;
+                    const y = e.clientY - e.target.getBoundingClientRect().top;
+                    
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('ripple');
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                        window.location.href = this.href;
+                    }, 1000);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
