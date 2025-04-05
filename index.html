@@ -1,79 +1,327 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Llamada de la fuente "poppins" desde Google Fonts y a los iconos de awesome-->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-    rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/9c7100c4f0.js" crossorigin="anonymous"></script>
-  <!-- Llamada a los estilos desde styles.css y configuracion del favicon y nombre del sitio web-->
-  <link rel="stylesheet" href="styles.css"/>
-  <link rel="icon" type="image/jpg" href="images/favicon.ico" />
-  <title>Elian Hernández Olart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Nucleo Sepec</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #003366;
+            --accent: #ff6600;
+            --light: #f8f9fa;
+            --dark: #343a40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .contact-card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-card h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .contact-info {
+            margin-bottom: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+        
+        .contact-text a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-text a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .social-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .social-section h2 {
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .facebook { background-color: #3b5998; }
+        .instagram { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); }
+        .linkedin { background-color: #0077b5; }
+        .twitter { background-color: #1da1f2; }
+        .web { background-color: var(--primary); }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-card {
+                min-width: 100%;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 8px;
+        }
+        
+        .email-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .email-btn:hover {
+            background-color: #e65c00;
+        }
+        
+        .email-btn i {
+            margin-right: 8px;
+        }
+    </style>
 </head>
-<section id="banner">
-  <header>
-    <div class="foto-perfil">
-      <img src="images/profile-pic.png" alt="Foto de perfil" />
+<body>
+    <header>
+        <div class="container">
+            <img src="https://www.nucleosepec.com.mx/wp-content/uploads/2023/01/logo-nucleo-sepec.png" alt="Nucleo Sepec Logo" class="logo">
+            <h1>Contáctanos</h1>
+            <p>Estamos aquí para ayudarte. Ponte en contacto con nuestro equipo.</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="contact-section">
+            <div class="contact-card">
+                <h2>TI Poza Rica</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-text">
+                            <p>WhatsApp</p>
+                            <a href="https://wa.me/5217821035865" class="whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> Enviar mensaje
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <p>Correo electrónico</p>
+                            <a href="mailto:soportepr@nucleosepec.com.mx" class="email-btn">
+                                <i class="fas fa-envelope"></i> Enviar correo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <h2>TI Villahermosa</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-text">
+                            <p>WhatsApp</p>
+                            <a href="https://wa.me/5217821035865" class="whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> Enviar mensaje
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <p>Correo electrónico</p>
+                            <a href="mailto:soportevh@nucleosepec.com.mx" class="email-btn">
+                                <i class="fas fa-envelope"></i> Enviar correo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="social-section">
+            <h2>Síguenos en redes sociales</h2>
+            <div class="social-links">
+                <a href="https://www.nucleosepec.com.mx/" class="social-link web" target="_blank" title="Sitio web">
+                    <i class="fas fa-globe"></i>
+                </a>
+                <a href="https://www.facebook.com/nucleosepec" class="social-link facebook" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/nucleo_sepec" class="social-link instagram" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/nucleosepec" class="social-link linkedin" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://x.com/Nucleo_Sepec" class="social-link twitter" target="_blank" title="X (Twitter)">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="texto-principal">
-      <h1>Elian Hernández Olarte</h1>
-      <h2>Engineer IT and Network Security Manager</h2>
-      <h3>Núcleo Sepec</h3>
-     <!-- <p>
-        Diseño de sitios web, cotizaciones de hardware, soporte tecnico, asesorias y elaboración de proyectos de redes y ciberseguridad.
-      </p> -->
-    </div>
-  </header>
-
-  <div class="iconos">
-    <figure class="icon1" >
-      <a href="https://wa.me/7821035865">
-        <img src="images/button-1.png" alt="icono de whatsapp" />
-      </a>
-      <figcaption></figcaption>
-    </figure>
-    <figure class="icon2">
-      <a href="mailto:soportevh@nucleosepec.com.mx">
-        <img src="images/button-2.png" alt="icono de correo" />
-      </a>
-      <figcaption></figcaption>
-    </figure>
-    <figure class="icon3">
-      <a href="https://www.linkedin.com/company/nucleosepec/">
-      <img src="images/button-3.png" alt="icono de linkedin" />
-      <figcaption></figcaption>
-    </figure>
-    <figure class="icon4">
-      <a href="https://instagram.com/nucleo_sepec">
-      <img src="images/button-4.png" alt="icono de instagram" />
-      <figcaption></figcaption>
-    </figure>
-    <figure class="icon5">
-      <a href="https://twitter.com/nucleo_sepec/">
-      <img src="images/button-5.png" alt="icono de x" />
-      <figcaption></figcaption>
-    </figure>
-    <figure>
-      <a href="https://www.facebook.com/nucleosepec">
-      <img src="images/button-6.png" alt="icono de FB"
-    </figure>
-  </div>
-
-</section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Nucleo Sepec. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </body>
-<footer>
-
-</footer>
-
 </html>
