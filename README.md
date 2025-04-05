@@ -1,49 +1,41 @@
-## Proyecto de sitio web responsivo con HTML5 y CSS
+Página de Contactos Moderna - Nucleo Sepec
+✨ Página de contactos interactiva y responsive para Nucleo Sepec con diseño elegante, animaciones fluidas y efectos visuales modernos.
 
-**[Link en vivo](https://jernelolart.github.io/)**
+Características principales
+🎨 Diseño atractivo con efecto glassmorphism y gradientes dinámicos
 
-**Descripción del proyecto**
+📱 Totalmente responsive - se adapta a todos los dispositivos
 
-Este proyecto consiste en el desarrollo de una tarjeta de presentación interactiva, utilizando únicamente HTML5 y CSS. El objetivo es crear un sitio web que se adapte a diferentes tamaños de pantalla, desde dispositivos móviles hasta computadoras de escritorio, sin necesidad de utilizar frameworks o bibliotecas adicionales.
-En esta ocasión, incluiremos en la tarjeta botones con enlaces a un sitio web corporativo, una encuesta tipo interactiva y diferentes redes sociales.
+⚡ Animaciones CSS modernas:
 
-**Tecnologías utilizadas**
+Efectos hover 3D en tarjetas
 
-- HTML5
-- CSS
+Transiciones suaves
 
-**Estructura del proyecto**
+Animaciones de aparición escalonada
 
-La estructura del proyecto se organiza de la siguiente manera:
+📞 Integración con canales de contacto:
 
-- `index.html`: El archivo principal del sitio web que contiene el contenido HTML Y CSS.
+Enlaces directos a WhatsApp
 
+Formularios de correo electrónico
 
-**Requisitos para ejecutar el proyecto**
+🌐 Redes sociales con iconos interactivos
 
-Para ejecutar el proyecto, se necesita un navegador web moderno que soporte HTML5 y CSS.
+🖼️ Fondo personalizado con overlay para mejor legibilidad
 
-**Pasos para ejecutar el proyecto**
+🏆 Logo del 20 aniversario de Nucleo Sepec
 
-1. Clonar el repositorio del proyecto en su computadora.
-2. Abrir el archivo `index.html` en un navegador web.
+Tecnologías utilizadas
+HTML5 semántico
 
-**Consideraciones de diseño responsivo**
+CSS3 avanzado (Flexbox, Grid, Animaciones)
 
-Para lograr un diseño responsivo, se han utilizado las siguientes técnicas:
+Font Awesome para iconos
 
-- **Media queries**: Se han utilizado media queries para definir diferentes estilos para diferentes tamaños de pantalla.
-- **Unidades relativas**: Se han utilizado unidades relativas, como `%` y `vw`, para que los elementos del sitio web se adapten al tamaño de la pantalla.
-- **Diseño flexible**: Se ha utilizado un diseño flexible que permite que los elementos del sitio web se reordenen y reescalen según el tamaño de la pantalla.
+Google Fonts (Poppins)
 
-**Ejemplos de uso**
-
-El sitio web responsivo desarrollado en este proyecto puede utilizarse para crear diferentes tipos de tarjetas de presentacion, que pueden ser utilizadas de forma profesional.
-
-**Contribuciones**
-
-Se agradece cualquier contribución a este proyecto, ya sea en forma de correcciones de errores, mejoras de diseño o nuevas funcionalidades.
-
+Efectos con JavaScript ligero
 **Licencia**
 
 Este proyecto está licenciado bajo la licencia MIT.
